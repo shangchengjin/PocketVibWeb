@@ -750,5 +750,50 @@ a:focus {
   }
 }
 
+/* Prevent horizontal overflow on small devices and improve wrapping */
+html, body {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hide accidental horizontal scroll while preserving content accessibility */
+body {
+  overflow-x: hidden;
+}
+
+/* Make media elements responsive */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure long text and links wrap instead of forcing overflow */
+.content, .content p, pre, code { 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Allow link-buttons to wrap on narrow screens */
+.publication-links .link-block, .link-block, .external-link, .button {
+  white-space: normal !important;
+}
+
+/* Small tweak: avoid fixed width dropdown causing overflow */
+.more-works-dropdown {
+  width: auto;
+  min-width: 200px;
+  max-width: 95vw;
+}
+
+/* Ensure columns/gutters don't exceed viewport on very small screens */
+@media screen and (max-width: 480px) {
+  .columns {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
 
 
